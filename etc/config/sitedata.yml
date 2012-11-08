@@ -1,0 +1,8 @@
+settings:
+  assets:
+    manifest: public/assets
+    precompile:
+      - !ruby/regexp '/\w+\.(?!js|css).+/'
+      - !ruby/regexp '/application.(css|js)$/'
+  csrf:
+    secret: this is my very unique csrf secret key

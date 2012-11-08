@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Application</title>
+    <%= stylesheet_link_tag 'app.css' %>
+    <%= include_gon %>
+    <%= Rack::Csrf.metatag(env, name: 'validbrite') %>
+  </head>
+  <body>
+    <%= cdnjs_library '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.1/modernizr.min.js' %>
+    <div id="content"><%= yield %></div>
+    <%= cdnjs_library '//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.1/jquery.min.js' %>
+    <%= javascript_include_tag 'app.js' %>
+  </body>
+</html>
