@@ -6,7 +6,6 @@ Sinatra + Mongoid + CoffeeScript + Sass + Gon + Sprockets.
 ## App-specific classes
 
 *  SCore::Config     -> loads sitedata.yml configuration.
-*  SCore::ApiKeys    -> loads apikeys.yml config for current run environment.
 *  SCore::AppLoader  -> loads files and monitors mtimes (except assets/views, which are handled by sprockets/sinatra)
 
 ## About DB
