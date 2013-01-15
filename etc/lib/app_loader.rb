@@ -8,7 +8,6 @@ module AppLoader
       routes:       { directory: '/routes',       type: 'directory',  method: :reload_application_routes },
       helpers:      { directory: '/helpers',      type: 'directory',  method: :reload_class_extensions },
       models:       { directory: '/models',       type: 'file',       method: :reload_application_model, load_on_init: false },
-      game:         { directory: '/game',         type: 'directory',  method: :reload_class_extensions }
     }
   end
 
