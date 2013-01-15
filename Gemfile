@@ -1,8 +1,6 @@
 source 'http://rubygems.org'
 
 
-
-
 # Sass format support
 gem 'sass', require: 'sass'
 
@@ -12,7 +10,7 @@ gem 'compass'
 # Core Sinatra Framework
 gem 'sinatra', require: 'sinatra/base'
 
-# Common sinatra extensions, esp sinatra/json     
+# Common sinatra extensions, esp sinatra/json
 gem 'sinatra-contrib'
 
 # Coffeescript format support
@@ -38,6 +36,9 @@ gem 'thin'
 
 # CSRF
 gem 'rack_csrf', require: 'rack/csrf'
+
+# flash
+gem 'rack-flash3', require: 'rack-flash'
 
 # Gon
 gem 'gon-sinatra'

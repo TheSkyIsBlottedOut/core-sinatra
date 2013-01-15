@@ -1,8 +1,8 @@
 /*
  *= require_self
  *= require_tree ./plugins
+ *= require ./global/reset
  *= require_tree ./global
  *= require_tree ./auto
  *
 */
-@import "compass/reset";

@@ -8,6 +8,14 @@
   </head>
   <body>
     <%= cdnjs_library '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.1/modernizr.min.js' %>
+    <% if flash[:notice] || flash[:error] %>
+      <div id="flash-content">
+        <% [:notice, :error].each do |type| %>
+          <% next unless flash[type] %>
+          <p class="<%= type %>"><%= flash[type] %></p>
+        <% end %>
+      </div>
+    <% end %>
     <div id="content"><%= yield %></div>
     <%= cdnjs_library '//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.1/jquery.min.js' %>
     <%= javascript_include_tag 'app.js' %>

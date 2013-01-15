@@ -1,0 +1,18 @@
+#flash-content {
+  margin: 30px auto;
+  border: 1px solid black;
+  width: 50%;
+  padding: 10px;
+  background-color: #0030b0;
+  color: #fff;
+  p {
+    display: block;
+    padding: 10px 5px;
+    &.notice {
+      background-color: #5050c0;
+    }
+    &.error {
+      background-color: red;
+    }
+  }
+}
