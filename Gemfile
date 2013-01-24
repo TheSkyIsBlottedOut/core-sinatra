@@ -12,6 +12,7 @@ gem 'sinatra', require: 'sinatra/base'
 
 # Common sinatra extensions, esp sinatra/json
 gem 'sinatra-contrib'
+gem 'sinatra-partial'
 
 # Coffeescript format support
 gem 'coffee-script'
@@ -22,9 +23,6 @@ gem 'hashie'
 # Database
 gem 'bson_ext'
 gem 'mongoid'
-
-# facebook authentication
-gem 'koala'
 
 # assets
 gem 'sinatra-sprockets-ext', require: 'sinatra/sprockets'

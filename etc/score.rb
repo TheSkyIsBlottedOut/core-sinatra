@@ -10,15 +10,19 @@ module SCore
       raise "Library file does not define constant #{sym} in #{filename}" unless const_defined?(sym)
       const_get(sym)
     end
-    
+
     def dir(path)
       Dir[File.join(self.root, path)]
     end
-    
+
+    def configuration(fn)
+      Hashie::Mash.new(YAML.load_file(SCore.file("/etc/config/#{fn}.yml")))
+    end
+
     def load_framework
       self.dir('/etc/middleware/**/*.rb').each {|x| require x}
     end
-    
+
     def gem_environment
       case @env.environment
       when /dev/ then 'development'
@@ -27,24 +31,24 @@ module SCore
         'development'
       end
     end
-    
+
     def start(args)
       @env = Hashie::Mash.new(args)
       self.dir('/etc/extensions/*.rb').each {|x| require x}
     end
-    
+
     def environment
       @env.environment || self.gem_environment
     end
-    
+
     def env?(arg)
       self.environment == arg.to_s
     end
-    
+
     def file(path)
       File.join(self.root, path)
     end
-    
+
     def root
       @env.root_path ||= File.expand_path(File.dirname(__FILE__) + '/..')
     end
