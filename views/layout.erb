@@ -1,22 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html class="<%= "phase-#{@game.data.turn.phase.to_s.tr(?_, ?-)}" if @game %>">
   <head>
-    <title>My Application</title>
+    <title>TwentyNine Kingdoms</title>
+    <link href="http://fonts.googleapis.com/css?family=<%= SCore::Config.settings.fonts.join ?| %>" rel="stylesheet" type="text/css"/>
     <%= stylesheet_link_tag 'app.css' %>
     <%= include_gon %>
-    <%= Rack::Csrf.metatag(env, name: 'validbrite') %>
+    <%= Rack::Csrf.metatag(env, name: 'valid') %>
   </head>
   <body>
-    <%= cdnjs_library '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.1/modernizr.min.js' %>
-    <% if flash[:notice] || flash[:error] %>
-      <div id="flash-content">
-        <% [:notice, :error].each do |type| %>
-          <% next unless flash[type] %>
-          <p class="<%= type %>"><%= flash[type] %></p>
-        <% end %>
-      </div>
-    <% end %>
-    <div id="content"><%= yield %></div>
+    <div id="wrapper">
+      <header>
+        <h1>Twenty-Nine Kingdoms</h1>
+      </header>
+      <%= cdnjs_library '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.1/modernizr.min.js' %>
+      <% if flash[:notice] || flash[:error] %>
+        <div id="flash-content">
+          <% [:notice, :error].each do |type| %>
+            <% next unless flash[type] %>
+            <p class="<%= type %>"><%= flash[type] %></p>
+          <% end %>
+        </div>
+      <% end %>
+      <div id="content"><%= yield %></div>
+      <%= partial('parts/sidebar') %>
+      <footer>
+        <h3 class="title">Page</h3>
+        <article class="content">
+          Description: this is the place where things are happening. blah blah blah.
+        </article>
+      </footer>
+    </div>
+
     <%= cdnjs_library '//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.1/jquery.min.js' %>
     <%= javascript_include_tag 'app.js' %>
   </body>

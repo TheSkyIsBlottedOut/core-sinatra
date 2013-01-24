@@ -5,4 +5,7 @@ settings:
       - !ruby/regexp '/\w+\.(?!js|css).+/'
       - !ruby/regexp '/application.(css|js)$/'
   csrf:
-    secret: this is my very unique csrf secret key
+    secret: twentynine is a prime number and that is useful in my calculations
+  fonts:
+    - "Merienda:400,700"
+    - "Raleway:200,400,800"

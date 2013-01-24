@@ -1,0 +1,69 @@
+@import "_vars";
+
+div#content {
+  div.building {
+    width: 280px;
+    margin: 10px;
+    padding-top: 10px;
+    display: inline-block;
+    position: relative;
+    background-color: $color-blue;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -15px;
+      right: 0;
+      border-top: none;
+      border-left: 280px solid transparent;
+      border-right: none;
+      border-bottom: 15px solid $color-blue;
+    }
+
+    h5 {
+      font-size: 18px;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 10px 0;
+      width: 100%;
+      font-size: 12px;
+    }
+
+    .button.subtract-units {
+      float: left;
+      margin-left: 10px;
+    }
+
+    .button.add-units {
+      float: right;
+      margin-right: 10px;
+    }
+
+    .occupants {
+      width: 100%;
+      padding-top: 10px;
+      text-align: left;
+      padding-left: 10px;
+      .unit, .soldier{
+        display: inline-block;
+        height: 20px;
+        width: 10px;
+        margin: 2px;
+        background-color: $color-black;
+      }
+
+      .unit.occupied {
+        background-color: $color-yellow;
+      }
+
+      .soldier.occupied {
+        background-color: $color-red;
+      }
+
+    } // .occupants
+  } // div.annex
+}

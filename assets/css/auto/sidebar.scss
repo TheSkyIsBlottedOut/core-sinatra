@@ -1,0 +1,39 @@
+#sidebar {
+  h1 {
+    margin: 10px 0;
+    width: 100%;
+    font-weight: 800;
+    font-size: 18px;
+  }
+  a {
+    color: #ff0;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+  section.phases {
+    ul {
+      padding: 10px 0;
+      border-radius: 5px;
+      margin: 3px;
+      background-color: #110;
+      text-align: left;
+      padding-left: 20px;
+
+      li.selected {
+        position: relative;
+        font-weight: 800;
+        &:before {
+          content: '-';
+          position: absolute;
+          left: -15px;
+          top: -1px;
+        }
+      }
+    }
+  }
+}

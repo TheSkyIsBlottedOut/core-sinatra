@@ -3,12 +3,14 @@ class Application < Sinatra::Base
   enable      :sessions
   extend      SCore::AppLoader
   register    Sinatra::Sprockets
+  register    Sinatra::Partial
   register    Gon::Sinatra
 
-  set :root,              SCore.root
-  set :reload_templates,  SCore.env?('development')
-  set :environment,       SCore.gem_environment
-  set :sprockets,         Sinatra::Sprockets.environment
+  set :root,                    SCore.root
+  set :reload_templates,        SCore.env?('development')
+  set :environment,             SCore.gem_environment
+  set :sprockets,               Sinatra::Sprockets.environment
+  set :partial_template_engine, :erb
 
   configure do
     self.run_initializers

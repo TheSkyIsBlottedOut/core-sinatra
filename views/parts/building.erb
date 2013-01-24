@@ -1,0 +1,25 @@
+<%#
+  name: 'object',
+  description: 'this is an object',
+  tooltip: 'this object is the best object. you should like it with your whole body.',
+  population: {max: 20, current: 6}
+
+%>
+<%
+  item = Hashie::Mash.new item
+  show_buttons = @game && [:worker_placement, :military_placement].include?(@game.data.turn.phase)
+
+%>
+<div class="building" rel="<%= type %>">
+  <h5 data-tooltip-content="<%= item.tooltip %>" data-tooltip-title="<%= item.name %>"><%= item.name %></h5>
+  <% if show_buttons %>
+    <div class="button add-units">+</div>
+    <div class="button subtract-units">-</div>
+  <% end %>
+  <p><%= item.description %></p>
+  <div class="occupants">
+    <% 1.upto(item.population[:max]) do |c| %>
+      <div class="unit <%= 'occupied' if c < item.population.current %>"></div>
+    <% end %>
+  </div>
+</div>

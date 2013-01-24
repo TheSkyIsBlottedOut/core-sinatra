@@ -1,0 +1,3 @@
+<% @game.data.buildings.each_pair do |key, building| %>
+  <%= partial('parts/building', locals: {item: building, type: key}) %>
+<% end %>

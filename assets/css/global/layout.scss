@@ -1,0 +1,70 @@
+@import "_vars";
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+html {
+  body {
+    background: image-url('debut-dark.png');
+    text-align: center;
+    font-family: Raleway, "Helvetica Neue";
+    font-weight: 200;
+
+    #wrapper {
+      width: $page-width;
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
+      background-color: $color-black;
+      color: white;
+      box-shadow: 0 0 20px #666;
+    }
+
+    header {
+      width: 100%;
+      padding: 10px 0;
+      h1 {
+        font-size: 36px;
+        font-weight: 700;
+        font-family: Merienda, cursive;
+        color: lighten($color-blue, 30%);
+        //text-shadow: 1px 1px 3px #009, -1px -1px 3px #ff3;
+      }
+    } // header
+
+
+    #sidebar {
+      float: left;
+      width: 200px;
+      min-height: 300px;
+      background-color: $color-blue;
+      margin: 0px 20px;
+      border-radius: 5px;
+    }
+
+    #content {
+      float: right;
+      margin-top: 20px;
+      width: $page-width - 340px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: -100px;
+      width: $page-width;
+      border-radius: 10px 10px 0 0;
+      border: 0;
+      border-bottom: none;
+      height: 100px;
+      background-color: $color-blue;
+      color: white;
+      h3 {
+        font-size: 22px;
+        font-weight: 800;
+        margin: 10px auto;
+      }
+    }
+  } // body
+} // html

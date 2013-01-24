@@ -1,0 +1,19 @@
+<div id="sidebar">
+  <% if @game %>
+  <form method="post" id="turn-specifications">
+    <input type="submit" value="Turn Complete" class="disabled"/>
+  </form>
+    <section class="phases">
+      <h1>Phases</h1>
+      <ul>
+        <% Application::Game::TurnManager::Phases.each do |phase| %>
+          <li class="<%= 'selected' if @game.data.turn.phase == phase %>"><%= phase.to_s.humanize %></li>
+        <% end %>
+      </ul>
+    </section>
+    Year <%= @game.data.turn.number + 100 %>
+  <% else %>
+    <a href="/game">Play</a>
+  <% end #if @game %>
+
+</div>

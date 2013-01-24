@@ -12,6 +12,7 @@ gem 'sinatra', require: 'sinatra/base'
 
 # Common sinatra extensions, esp sinatra/json
 gem 'sinatra-contrib'
+gem 'sinatra-partial'
 
 # Coffeescript format support
 gem 'coffee-script'

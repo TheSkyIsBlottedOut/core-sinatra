@@ -1,5 +1,4 @@
 get ?/ do
-  flash.now[:notice] = 'hi'
   erb :index
 end
 

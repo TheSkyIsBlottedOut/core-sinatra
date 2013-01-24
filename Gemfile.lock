@@ -68,6 +68,8 @@ GEM
       rack-test
       sinatra (~> 1.3.0)
       tilt (~> 1.3)
+    sinatra-partial (0.4.0)
+      sinatra
     sinatra-sprockets-ext (0.0.5)
       sprockets
     sprockets (2.8.2)
@@ -101,6 +103,7 @@ DEPENDENCIES
   sass
   sinatra
   sinatra-contrib
+  sinatra-partial
   sinatra-sprockets-ext
   sprockets-sass
   thin

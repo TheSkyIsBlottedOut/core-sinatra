@@ -1,3 +1,4 @@
+@import "_vars";
 #flash-content {
   margin: 30px auto;
   border: 1px solid black;
@@ -14,5 +15,20 @@
     &.error {
       background-color: red;
     }
+  }
+}
+
+div.button {
+  display: inline-block;
+  padding: 3px 5px;
+  border-radius: 5px;
+  background-color: $color-black;
+  color: lighten($color-blue, 30%);
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  &:hover {
+    background-color: white;
+    color: $color-black;
   }
 }
